@@ -1,0 +1,2132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Introduction to Glide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+  <link rel="stylesheet" href="_static/pygments.css">
+  <link rel="stylesheet" href="_static/handouts.css">
+
+
+  <link
+    href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,600,300italic,400italic,600italic|Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro:400,600,400italic,600italic'
+    rel='stylesheet'>
+
+  <style>
+
+
+  </style>
+  <style>
+    :root {
+      --theme-bodyfont: "Source Serif Pro", serif;
+      --theme-headfont: "Source Serif Pro", serif;
+      --theme-codefont: "Source Code Pro", monospace;
+      --theme-sidebarcolor: #F9F9FC;
+      --theme-backgroundcolor: white;
+      --theme-clientcolor: rgb(65, 65, 85);
+  </style>
+</head>
+
+<body class="glide">
+  <div id="page-wrapper">
+    <div id="page-sidebar">
+      <header>
+        <p class="page-project">Documentation</p>
+        <p class="page-event">Glide 2.3.1</p>
+
+        </p>
+      </header>
+
+      <nav id="toc">
+        <ul>
+          <li><a class="reference internal" href="#">Introduction to Glide</a>
+            <ul>
+              <li><a class="reference internal" href="#introduction">Introduction</a></li>
+              <li><a class="reference internal" href="#installation">Installation</a>
+                <ul>
+                  <li><a class="reference internal" href="#optional-components">Optional Components</a>
+                    <ul>
+                      <li><a class="reference internal" href="#latex">LaTeX</a></li>
+                      <li><a class="reference internal" href="#matplotlib">Matplotlib</a></li>
+                      <li><a class="reference internal" href="#graphviz">Graphviz</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#rendering-existing-documents">Rendering existing documents</a>
+                <ul>
+                  <li><a class="reference internal" href="#creating-lecture-demo-archive">Creating lecture demo
+                      archive</a></li>
+                  <li><a class="reference internal" href="#create-exercise-code-archive">Create exercise code
+                      archive</a></li>
+                  <li><a class="reference internal" href="#uploading-documents">Uploading documents</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#creating-a-new-document">Creating a new document</a></li>
+              <li><a class="reference internal" href="#basic-restructured-text">Basic restructured text</a>
+                <ul>
+                  <li><a class="reference internal" href="#basic-markup">Basic markup</a></li>
+                  <li><a class="reference internal" href="#section-headings">Section headings</a></li>
+                  <li><a class="reference internal" href="#lists">Lists</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#code-and-code-like-markup">Code and code-like markup</a>
+                <ul>
+                  <li><a class="reference internal" href="#parsed-literal-blocks">Parsed literal blocks</a></li>
+                  <li><a class="reference internal" href="#code-blocks">Code blocks</a>
+                    <ul>
+                      <li><a class="reference internal" href="#emphasizing-lines">Emphasizing lines</a></li>
+                      <li><a class="reference internal" href="#numbering-lines">Numbering lines</a></li>
+                      <li><a class="reference internal" href="#changing-font-size-or-number-of-columns">Changing font
+                          size or number of columns</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="reference internal" href="#console-sessions">Console sessions</a>
+                    <ul>
+                      <li><a class="reference internal" href="#other-console-interactions">Other console
+                          interactions</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="reference internal" href="#add-captions-to-code">Add captions to code</a></li>
+                  <li><a class="reference internal" href="#including-code-in-files">Including code in files</a>
+                    <ul>
+                      <li><a class="reference internal" href="#finding-things">Finding Things</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#images">Images</a>
+                <ul>
+                  <li><a class="reference internal" href="#id5">Images</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#notes-sidebars-and-topics">Notes, sidebars, and topics</a>
+                <ul>
+                  <li><a class="reference internal" href="#notes">Notes</a></li>
+                  <li><a class="reference internal" href="#sidebars">Sidebars</a></li>
+                  <li><a class="reference internal" href="#topics">Topics</a></li>
+                  <li><a class="reference internal" href="#hints">Hints</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#tables">Tables</a>
+                <ul>
+                  <li><a class="reference internal" href="#standard-table">Standard Table</a></li>
+                  <li><a class="reference internal" href="#arranging-columns">Arranging Columns</a></li>
+                  <li><a class="reference internal" href="#right-columns">Right Columns</a></li>
+                  <li><a class="reference internal" href="#csv-tables">CSV Tables</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#containers">Containers</a>
+                <ul>
+                  <li><a class="reference internal" href="#id6">Containers</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#comparing-things">Comparing Things</a>
+                <ul>
+                  <li><a class="reference internal" href="#id7">Comparing Things</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#only">Only</a>
+                <ul>
+                  <li><a class="reference internal" href="#id8">Only</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#slides">Slides</a>
+                <ul>
+                  <li><a class="reference internal" href="#speaker-notes">Speaker Notes</a></li>
+                </ul>
+              </li>
+              <li><a class="reference internal" href="#commonly-overlooked">Commonly overlooked</a></li>
+              <li><a class="reference internal" href="#glossary">Glossary</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+
+    <div id="page-content" class="page-content">
+
+      <div class="section" id="introduction-to-glide">
+        <h1>Introduction to Glide<a class="headerlink" href="#introduction-to-glide"
+            title="Permalink to this headline">»</a></h1>
+        <table class="docutils field-list" frame="void" rules="none">
+          <col class="field-name" />
+          <col class="field-body" />
+          <tbody valign="top">
+            <tr class="field-odd field">
+              <th class="field-name">author:</th>
+              <td class="field-body">Joel Burton &lt;<a class="reference external"
+                  href="mailto:joel&#37;&#52;&#48;joelburton&#46;com">joel<span>&#64;</span>joelburton<span>&#46;</span>com</a>&gt;
+              </td>
+            </tr>
+            <tr class="field-even field">
+              <th class="field-name">version:</th>
+              <td class="field-body">2.3.1</td>
+            </tr>
+            <tr class="field-odd field">
+              <th class="field-name">updated:</th>
+              <td class="field-body">2021-11-15</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>This document provides an introduction to the <cite>Glide Document System</cite>
+          and how to use it to create curriculum artifacts from source materials. It
+          focuses more on <em>using</em> the system, and does not attempt to be a comprehensive
+          guide to everything needed to author documents. That is covered elsewhere.</p>
+        <p>Glide source documents are meant to be read. You may find it useful to
+          examine the document creating this introduction, <a class="reference external"
+            href="_sources/index.rst.txt">which you can find here</a>.</p>
+        <div class="section" id="introduction">
+          <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">»</a></h2>
+          <p>Glide is system oriented for technical users to produce curriculum (both
+            document-oriented and slide-oriented) from source material. It can produce:</p>
+          <ul class="simple">
+            <li>HTML handouts</li>
+            <li>HTML slides</li>
+            <li>PDFs generated via <a class="reference internal" href="#term-LaTeX"><span
+                  class="xref std std-term">LaTeX</span></a> or <a class="reference internal" href="#term-Prince"><span
+                  class="xref std std-term">Prince</span></a></li>
+          </ul>
+          <p>The source materials can include:</p>
+          <ul class="simple">
+            <li><a class="reference internal" href="#basic-rst"><span class="std std-ref">reStructured Text</span></a>
+              <em>(the primary document type, explained below)</em></li>
+            <li>Images <em>(in many formats, including gif, png, jpg, and svg)</em></li>
+            <li>Source code</li>
+            <li>Charts and diagrams in several different formats</li>
+            <li>Other text documents</li>
+          </ul>
+          <hr class="docutils" />
+          <p>The purpose of glide can be summed up as this:</p>
+          <blockquote class="pull-quote">
+            <div>Technical materials not kept in text-editable,
+              version-controllable files are dead.</div>
+          </blockquote>
+          <p id="index-0">I created Glide while in grad school initially to avoid paying for
+            financially-out-reach slide presentation software when I spoke at conferences.
+            However, once I had access to desktop slide making software, I realized that
+            maintaining technical presentations created in such program was difficult,
+            because the effort to fix small typos or reframe examples often outweighed
+            the benefits of doing so, leaving tiny cuts and bruises of editing debt.
+            Furthermore, such programs were typically operating-system focused and
+            inaccessible to collaborators.</p>
+          <p>As more of my work moved to programming topics, the biggest benefit emerged:
+            presentations created entirely in text can be version controlled, while
+            clear optics toward when and by whom a documents and diagrams were changed
+            (for clarity of this idea, try using <strong class="program">git diff</strong> on a PowerPoint deck).
+            Furthermore, the coding content of such documents can be unit tested, ensuring
+            that bits of untested code don’t creep into slide decks.</p>
+        </div>
+        <div class="section" id="installation">
+          <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">»</a></h2>
+          <p>TODO aafigure</p>
+          <p>To use Glide, you must first install it. Basic installation is typically
+            straightforward.</p>
+          <div class="literal-block-wrapper docutils container" id="id9">
+            <div class="code-block-caption"><span class="caption-text">in your terminal</span><a class="headerlink"
+                href="#id9" title="Permalink to this code">»</a></div>
+            <div class="console highlight-simple-console notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="gp">$ </span><span class="gs">pip install glide</span>
+<span class="c"># Lots of output, ending with ...</span>
+Successfully installed &lt;list of products&gt;
+</pre>
+              </div>
+            </div>
+          </div>
+          <p>Several sites using Glide have specialized themes for it that include their
+            organization branding logos or colors; these themes are separate products. At
+            Rithm School, we can install our theme product with:</p>
+          <div class="console highlight-simple-console notranslate">
+            <div class="highlight">
+              <pre><span></span><span class="gp">$ </span><span class="gs">pip install glide-rithm</span>
+<span class="c"># Lots of output, ending with ...</span>
+Successfully installed &lt;list of products&gt;
+</pre>
+            </div>
+          </div>
+          <div class="admonition-todo admonition-generic admonition" id="id1">
+            <p class="first admonition-title">Todo</p>
+            <p class="last">These commands won’t work yet!</p>
+          </div>
+          <div class="section" id="optional-components">
+            <h3>Optional Components<a class="headerlink" href="#optional-components"
+                title="Permalink to this headline">»</a></h3>
+            <p>For some users, that will be all the software that is needed. For some users,
+              there are additional pieces that should be installed.</p>
+            <div class="section" id="latex">
+              <h4>LaTeX<a class="headerlink" href="#latex" title="Permalink to this headline">»</a></h4>
+              <div class="figure align-right" id="id10">
+                <img alt="_images/example.png" class="image-border" src="_images/example.png" style="width: 16em;" />
+                <p class="caption"><span class="caption-text">Example of PDF.</span><a class="headerlink" href="#id10"
+                    title="Permalink to this image">»</a></p>
+              </div>
+              <p>To generate PDF documents, you’ll need to have LaTeX installed. While this is
+                an easy install, LaTeX is a huge program, and installing it will take at least
+                a gigabyte of space.</p>
+              <p>A straightforward way to install LaTeX on a Mac is <a class="reference external"
+                  href="https://www.tug.org/mactex/mactex-download.html">MacTeX</a>.</p>
+              <p>I prefer to get as much of my software from package management systems, so I
+                install LaTeX via Macports; to do so, you’ll need the following packages:</p>
+              <div class="line-block">
+                <div class="line">texlive</div>
+                <div class="line">texlive-fonts-extra</div>
+                <div class="line">texlive-latex-extra</div>
+              </div>
+            </div>
+            <div class="section" id="matplotlib">
+              <span id="matplotlib-overview"></span>
+              <h4>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">»</a></h4>
+              <p>To use charts and other kinds of technical, you can use <a class="reference external"
+                  href="https://matplotlib.org/">Matplotlib</a> to write a program to generate the chart:</p>
+              <div class="compare docutils container">
+                <div class="literal-block-wrapper docutils container" id="id11">
+                  <div class="code-block-caption"><span class="caption-text">source code</span><a class="headerlink"
+                      href="#id11" title="Permalink to this code">»</a></div>
+                  <div class="code-40c highlight-python notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;size of list&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;pop()&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+</pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="docutils container">
+                </div>
+              </div>
+              <div class="align-left docutils container">
+                <div class="literal-block-wrapper docutils container" id="id12">
+                  <div class="code-block-caption"><span class="caption-text">source code</span><a class="headerlink"
+                      href="#id12" title="Permalink to this code">»</a></div>
+                  <div class="unsized highlight-python notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;size of list&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;pop()&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section" id="graphviz">
+              <span id="graphviz-overview"></span>
+              <h4>Graphviz<a class="headerlink" href="#graphviz" title="Permalink to this headline">»</a></h4>
+              <p>Graphviz is a program that turns text-based diagrammatic instructions into
+                attractive graphs, like this:</p>
+              <p>Installing Graphviz is typically a straightforward process:</p>
+              <div class="console highlight-simple-console notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="gp">$ </span><span class="gs">brew install Graphviz     </span><span class="c"># if you use Homebrew</span>
+<span class="gp">$ </span><span class="gs">brew install graphviz     </span><span class="c"># if you use MacPorts</span>
+</pre>
+                </div>
+              </div>
+              <div class="admonition important">
+                <p class="first admonition-title">Important</p>
+                <p>At Rithm, Graphviz is required!</p>
+                <p class="last">Almost half of our lectures and exercises use Graphviz (particularly those
+                  focusing in databases and data structures). You will need to get it installed
+                  to render any of these resources.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="rendering-existing-documents">
+          <h2>Rendering existing documents<a class="headerlink" href="#rendering-existing-documents"
+              title="Permalink to this headline">»</a></h2>
+          <p>To render a curriculum asset, change to the directory of the asset and run one
+            of the generating commands. For example, to publish this document:</p>
+          <div class="console highlight-simple-console notranslate">
+            <div class="highlight">
+              <pre><span></span><span class="gp">$ </span><span class="gs">cd glide/doc</span>
+<span class="gp">$ </span><span class="gs">make handouts-open</span>
+</pre>
+            </div>
+          </div>
+          <p>This will generate the handouts-style artifact and open it in your default
+            browser for examination.</p>
+          <div class="admonition tip">
+            <p class="first admonition-title">Tip</p>
+            <p>Not sure what the asset directory is?</p>
+            <p class="last">Glide assets always have two files in their directory, <code
+                class="file docutils literal notranslate"><span class="pre">Makefile</span></code> and
+              <code class="file docutils literal notranslate"><span class="pre">index.rst</span></code>. If you don’t
+              see these files, you may be either higher or
+              lower in the directory tree than you should be.
+            </p>
+          </div>
+          <p>For the curriculum assets at Rithm, it needs to know which cohort you are
+            building materials for, so if these are uploaded, it will put them in the
+            right folder on the server. Therefore, you should set an environmental variable,
+            <span class="target" id="index-1"></span><code
+              class="xref std std-envvar docutils literal notranslate"><span class="pre">RITHM_COHORT</span></code>:
+          </p>
+          <div class="console highlight-simple-console notranslate">
+            <div class="highlight">
+              <pre><span></span><span class="gp">$ </span><span class="gs">export RITHM_COHORT=r17</span>
+</pre>
+            </div>
+          </div>
+          <p>There are many other generation commands:</p>
+          <table border="1" class="docutils align-default" id="id13">
+            <caption><span class="caption-text">Core Glide commands</span><a class="headerlink" href="#id13"
+                title="Permalink to this table">»</a></caption>
+            <colgroup>
+              <col width="35%" />
+              <col width="65%" />
+            </colgroup>
+            <thead valign="bottom">
+              <tr class="row-odd">
+                <th class="head">Command</th>
+                <th class="head">Outcome</th>
+              </tr>
+            </thead>
+            <tbody valign="top">
+              <tr class="row-even">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">handouts</span></code>
+                </td>
+                <td>Generate handouts</td>
+              </tr>
+              <tr class="row-odd">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">handouts-open</span></code>
+                </td>
+                <td>Generate handouts and open in browser</td>
+              </tr>
+              <tr class="row-even">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">revealjs</span></code>
+                </td>
+                <td>Generate slides</td>
+              </tr>
+              <tr class="row-odd">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">revealjs-open</span></code>
+                </td>
+                <td>Generate slides and open in browser</td>
+              </tr>
+              <tr class="row-even">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">latexpdf</span></code>
+                </td>
+                <td>Generate PDF <em>(requires LaTeX installation)</em></td>
+              </tr>
+              <tr class="row-odd">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">linkcheck</span></code>
+                </td>
+                <td>Check that all URLs in asset are live</td>
+              </tr>
+              <tr class="row-even">
+                <td><code
+                    class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">text</span></code>
+                </td>
+                <td>Generate text version</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>A good place to begin is trying each of these commands on a curriculum asset
+            and investigating the results.</p>
+          <div class="admonition note">
+            <p class="first admonition-title">Note</p>
+            <p>Watching and Refreshing</p>
+            <p>All of those commands test or generate things on your individual computer. It’s
+              common, as writing or editing curriculum, to constantly keep generating and
+              viewing it, so my colleagues at Rithm, Tim and Matt, created a “watcher”
+              system for this — you need only run the generating command once, and it will
+              continually refresh it in the browser while you work. To use this capability,
+              you’ll need to install <cite>watchdog</cite>:</p>
+            <div class="console highlight-simple-console notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="gp">$ </span><span class="gs">python3 -m pip install watchdog</span>
+</pre>
+              </div>
+            </div>
+            <p>Then, to generate and get constantly updated web views:</p>
+            <div class="console highlight-simple-console notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="gp">$ </span><span class="gs">make watch-handouts   </span><span class="c"># for handouts, or</span>
+<span class="gp">$ </span><span class="gs">make watch-revealjs   </span><span class="c"># for slides</span>
+</pre>
+              </div>
+            </div>
+            <p class="last">To stop the watching system, press <kbd
+                class="kbd docutils literal notranslate">Control-c</kbd> in the terminal.</p>
+          </div>
+          <div class="section" id="creating-lecture-demo-archive">
+            <h3>Creating lecture demo archive<a class="headerlink" href="#creating-lecture-demo-archive"
+                title="Permalink to this headline">»</a></h3>
+            <p>Most of our lectures have a demo that is used during the lecture or where bits
+              of code are on slides. Such a demo is placed into a <code
+                class="file docutils literal notranslate"><span class="pre">.zip</span></code> archive and shared
+              with the students. When working with our curriculum, you may find it useful to
+              use that zipfile, so that you can try out the demo exactly as a student would.</p>
+            <p>To do so, use the command <strong class="program">make demozip</strong>. That will take make a zip
+              archive of a folder at the top of the lecture titled <cite>demo</cite>.</p>
+          </div>
+          <div class="section" id="create-exercise-code-archive">
+            <h3>Create exercise code archive<a class="headerlink" href="#create-exercise-code-archive"
+                title="Permalink to this headline">»</a></h3>
+            <p>Similarly, almost all our exercises have starter code, and Glide makes a zipfile
+              for that, too. You can generate that zipfile to examine it with <strong class="program">make zip</strong>.
+              The generated file will contain everything in the exercise with a few
+              exceptions: it never includes things in a folder called <code
+                class="file docutils literal notranslate"><span class="pre">meta/</span></code>, and never
+              includes restructured text files anywhere or useless things like Python
+              virtual environments of JavaScript <code
+                class="file docutils literal notranslate"><span class="pre">node_modules</span></code>.</p>
+            <p>Most important, though, is that it doesn’t include the solution for the
+              exercise: you can get that with <strong class="program">make soln</strong>.</p>
+            <p>The same commands work the same way for assessments — the only difference is
+              that assessment solution zipfiles are password-protected; the students are
+              given that password only after every student has submitted their assessment.
+              The password is printed on your screen while building an assessment, so it can
+              be shared with students.</p>
+          </div>
+          <div class="section" id="uploading-documents">
+            <h3>Uploading documents<a class="headerlink" href="#uploading-documents"
+                title="Permalink to this headline">»</a></h3>
+            <p>Glide is typically set up to upload to a centralized server.</p>
+            <p>Here at Rithm, we all share a single key for our server, in a file called
+              <code class="file docutils literal notranslate"><span class="pre">rithm-curric-pem.txt</span></code>. You
+              should ask someone for that file, and then store
+              it in a directory in your home directory called <code
+                class="file docutils literal notranslate"><span class="pre">.ssh</span></code>. Then, you can load that
+              key
+              with <strong class="program">ssh-add</strong>, like so:
+            </p>
+            <div class="console highlight-simple-console notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="gp">$ </span><span class="gs">ssh-add ~/.ssh/rithm-curric-pem.txt</span>
+</pre>
+              </div>
+            </div>
+            <p>(the <strong class="program">ssh-add</strong> command will remember that key until your computer is
+              restarted;
+              you may find it useful to add that command to your shell profile, which for
+              most Mac users nowadays would be <code
+                class="file docutils literal notranslate"><em><span class="pre">$HOME</span></em><span class="pre">/.zshrc</span></code>.)
+            </p>
+            <p>When you have this set up, you can upload an assert with <strong class="program">make upload</strong>.
+              That will generate the asset, if it has changed since last generation, and
+              upload all versions: slides, handouts, and zip files.</p>
+          </div>
+        </div>
+        <div class="section" id="creating-a-new-document">
+          <h2>Creating a new document<a class="headerlink" href="#creating-a-new-document"
+              title="Permalink to this headline">»</a></h2>
+          <p>In the future, there will be commands to create a new curriculum asset but, for
+            now, the best way is to simply copy an existing one and edit it:</p>
+          <div class="console highlight-simple-console notranslate">
+            <div class="highlight">
+              <pre><span></span><span class="gp">$ </span><span class="gs">cp -a react-intro vue-intro</span>
+<span class="gp">$ </span><span class="gs">cd vue-intro</span>
+<span class="gp">$ </span><span class="gs">code index.rst</span>
+</pre>
+            </div>
+          </div>
+          <div class="admonition caution">
+            <p class="first admonition-title">Caution</p>
+            <p>Be careful how you copy!</p>
+            <p>In most Glide systems, the required <code
+                class="file docutils literal notranslate"><span class="pre">Makefile</span></code> is kept centrally,
+              and
+              the version in each directory is just a <em>soft link</em> to it. If you copy
+              a directory using <code
+                class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span></code> or
+              if you copy using the Finder, you will lose
+              the linked nature of this file, which can cause problems maintaining the
+              overall system.</p>
+            <p>You can check that you have the right kind of setup like so:</p>
+            <div class="console last highlight-simple-console notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="gp">$ </span><span class="gs">ls -l</span>
+total 152
+lrwxr-xr-x  1 joel  staff     11 Aug 26 16:53 Makefile@ -&gt; ../Makefile
+-rw-r--r--  1 joel  staff  55441 Aug 26 16:53 components.jpg
+drwxr-xr-x  9 joel  staff    288 Aug 28 23:02 demo/
+-rw-r--r--  1 joel  staff  12577 Aug 26 16:53 index.rst
+-rw-r--r--  1 joel  staff   1837 Aug 26 16:53 react.svg
+</pre>
+              </div>
+            </div>
+          </div>
+          <p>After making your new asset, try generating it with <cite>make handouts</cite>.</p>
+        </div>
+        <div class="section" id="basic-restructured-text">
+          <span id="basic-rst"></span>
+          <h2>Basic restructured text<a class="headerlink" href="#basic-restructured-text"
+              title="Permalink to this headline">»</a></h2>
+          <p>Restructured text is a markup system for text, similar to Markdown, but
+            considerably larger, more structured, and fully-featured. It is implemented
+            most commonly with the Python library <cite>docutils</cite> along with the program
+            <cite>Sphinx</cite>. Glide is a layer that sits above these, so you may find the
+            documentation of those products useful as you learn more about Glide.
+          </p>
+          <p>This section does not attempt to be a comprehensive guide to restructured text.
+            For a deeper introduction, see <a class="reference external"
+              href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructured Text
+              Primer</a>.</p>
+          <div class="section" id="basic-markup">
+            <h3>Basic markup<a class="headerlink" href="#basic-markup" title="Permalink to this headline">»</a></h3>
+            <p>Generally, input text becomes output text, with blank lines separating each
+              paragraph. There are common typographic conventions for inline markup:</p>
+            <div class="compare docutils container">
+              <div class="code-40c highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span>This paragraph has <span class="gs">**bold**</span> and
+<span class="ge">*italic*</span> elements.
+
+Also a <span class="nv">`code name`</span> and snippet of
+<span class="s">``actual code``</span>.
+
+You can make lovely em and en
+dashes---like this--or this.
+</pre>
+                </div>
+              </div>
+              <div class="docutils container">
+                <p>This paragraph has <strong>bold</strong> and
+                  <em>italic</em> elements.
+                </p>
+                <p>Also a <cite>code name</cite> and snippet of
+                  <code
+                    class="docutils literal notranslate"><span class="pre">actual</span> <span class="pre">code</span></code>.
+                </p>
+                <p>You can make lovely em and en
+                  dashes—like this–or this.</p>
+              </div>
+            </div>
+            <div class="admonition note">
+              <p class="first admonition-title">Note</p>
+              <p>Differentiating these</p>
+              <ul class="last simple">
+                <li><em>Italics</em> are used as is common in running text: for quoting
+                  an idea or introducing a new term (“this is called a
+                  <em>closure</em>”). This should not be used for coding elements like
+                  variable names, html tags, or such.
+                </li>
+                <li><strong>Bold</strong> should be used sparingly and for very important
+                  phrases to draw the readers’ attention: (“this will <strong>never</strong>
+                  happen”). This should also not be used for coding elements.</li>
+                <li><cite>code name</cite> is for variable names, file names, function names, and similar
+                  things. Some examples: “set the variable <cite>x</cite> on success” and
+                  “don’t forget to call <cite>evt.preventDefault()</cite>” (our style is to
+                  put parentheses after a function or method name to indicate that
+                  it is a function or method; if this were the complete signature
+                  or was showing it being called with parameters, that should be
+                  an <code
+                    class="docutils literal notranslate"><span class="pre">actual</span> <span class="pre">code</span></code>).
+                </li>
+                <li><code
+                    class="docutils literal notranslate"><span class="pre">actual</span> <span class="pre">code</span></code>
+                  should be for short snippets of, well, actual
+                  code: <code
+                    class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">7</span></code>
+                  and <code
+                    class="docutils literal notranslate"><span class="pre">fluffy.dance(&quot;tango&quot;)</span></code>.
+                </li>
+              </ul>
+            </div>
+            <p>You can also use semantic colors. Be very sparing here.</p>
+            <div class="compare docutils container">
+              <div class="code-40c highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span>This will <span class="nv">`delete all files`</span><span class="na">:danger:</span>
+or, on a better day, it might just
+<span class="nv">`send spam email`</span><span class="na">:warning:</span>.
+
+It will <span class="nv">`succeed`</span><span class="na">:success:</span>
+but---sadly---`may not be
+useful`:muted:.
+</pre>
+                </div>
+              </div>
+              <div class="docutils container">
+                <p>This will <span class="danger">delete all files</span>
+                  or, on a better day, it might just
+                  <span class="warning">send spam email</span>.
+                </p>
+                <p>It will <span class="success">succeed</span>
+                  but—sadly—<span class="muted">may not be
+                    useful</span>.</p>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="section-headings">
+            <h3>Section headings<a class="headerlink" href="#section-headings" title="Permalink to this headline">»</a>
+            </h3>
+            <p>You can divide a document into section with section headings.</p>
+            <div class="compare docutils container">
+              <div class="code-40c highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="gh">New section</span>
+<span class="gh">===========</span>
+
+Some text,
+and other stuff.
+</pre>
+                </div>
+              </div>
+              <div class="docutils container">
+                <p class="rubric">New section</p>
+                <p>Some text, and other stuff.</p>
+              </div>
+            </div>
+            <p>For our documents, we have these headings:</p>
+            <div class="code-60c highlight-rst notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="gh">==============</span>
+<span class="gh">Document title</span>
+<span class="gh">==============</span>
+
+There is only one of these, and it should be at the
+very top of the document.
+
+<span class="gh">Main section</span>
+<span class="gh">============</span>
+
+This usually divides a lecture into topics, or divides
+an exercise into its largest parts.
+
+<span class="gh">Minor section</span>
+<span class="gh">-------------</span>
+
+This produces an individual slide, and is used for
+dividing parts of an exercise into sub-parts.
+
+<span class="gh">Sub section</span>
+<span class="gh">+++++++++++</span>
+
+We rarely use these, but sometimes long exercises need
+further sub-sections, and this is what we use for that.
+</pre>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="lists">
+            <h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">»</a></h3>
+            <p>Much of our material is present as bulleted lists:</p>
+            <div class="compare docutils container">
+              <div class="top-margin-1 code-40c highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="m">-</span> You can make lists
+
+<span class="m">-</span> With lots of bullets
+
+  <span class="m">-</span> And nest lists in lists
+
+    <span class="m">-</span> And so on
+
+Also:
+
+<span class="m">1.</span> Number lists, too
+
+<span class="m">2.</span> Which can have children
+
+   <span class="m">-</span> Like so
+</pre>
+                </div>
+              </div>
+              <div class="docutils container">
+                <ul class="simple">
+                  <li>You can make lists</li>
+                  <li>With lots of bullets<ul>
+                      <li>And nest lists in lists<ul>
+                          <li>And so on</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>Also:</p>
+                <ol class="arabic simple">
+                  <li>Number lists, too</li>
+                  <li>Which can have children<ul>
+                      <li>Like so</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <p>An important thing to note is that with reStructuredText, lists are <em>not</em>
+              indented initially. Note that the bullets or numbers start at the same
+              indentation of the surrounding text.</p>
+            <p>Glide also support definition lists, which we use frequently:</p>
+            <div class="compare docutils container">
+              <div class="code-40c highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span>A term
+    Along with the definition. Note
+    that this comes immediately
+    after the term; there cannot be
+    a line there.
+
+Another term
+    The definitions can be long.
+
+    And divided into paragraphs.
+
+<span class="nv">`Cat.dance()`</span>
+    How we can define a programming
+    term.
+</pre>
+                </div>
+              </div>
+              <div class="docutils container">
+                <dl class="docutils">
+                  <dt>A term</dt>
+                  <dd>Along with the definition. Note
+                    that this comes immediately
+                    after the term; there cannot be
+                    a line there.</dd>
+                  <dt>Another term</dt>
+                  <dd>
+                    <p>The definitions can be long.</p>
+                    <p>And divided into paragraphs.</p>
+                  </dd>
+                  <dt><cite>Cat.dance()</cite></dt>
+                  <dd>How we can define a programming
+                    term.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="code-and-code-like-markup">
+          <h2>Code and code-like markup<a class="headerlink" href="#code-and-code-like-markup"
+              title="Permalink to this headline">»</a></h2>
+          <div class="section" id="parsed-literal-blocks">
+            <h3>Parsed literal blocks<a class="headerlink" href="#parsed-literal-blocks"
+                title="Permalink to this headline">»</a></h3>
+            <p>It’s common for us to show content that is in monospace, with a border, but
+              not written in any particular code language. This is often done to make line
+              art-style diagrams, with color or emphasized text.</p>
+            <p>For example, here is a diagram intended to show recursion:</p>
+            <div class="unsized parsed-literal-wrapper">
+              <pre>        <strong>n: []</strong>  <em>base</em>    ⭣0
+        <span class="red">──────────────────</span>
+      <strong>n: [1]</strong>     3 + ⭡[] ⭣3
+      <span class="green">──────────────────────</span>
+    <strong>n: [2,3]</strong>      2 + ⭡[3] ⭣5
+    <span class="blue">──────────────────────────</span>
+  <strong>n: [1,2,3]</strong>     1 + ⭡[2,3] ⭣6
+  <span class="pink">──────────────────────────────</span>
+<strong>add([1,2,3])</strong>              ⭡[1,2,3]
+──────────────────────────────────
+</pre>
+            </div>
+            <p>These are created using the <cite>parsed-literal</cite> directive, which the content in
+              a bordered box (we’ll see the same style for programming code later). The
+              <em>parsed</em> term refers to the idea that you can use most reStructuredText formatting in
+              the block. Here is the source for the diagram above:
+            </p>
+            <div class="unsized highlight-rst notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="p"> ..</span> <span class="ow">parsed-literal</span><span class="p">::</span>
+    <span class="nc">:caption:</span> source
+
+
+            <span class="gs">**n: []**</span>  <span class="ge">*base*</span>    ⭣0
+            <span class="nv">`──────────────────`</span><span class="na">:red:</span>
+          <span class="gs">**n: [1]**</span>     3 + ⭡[] ⭣3
+          <span class="nv">`──────────────────────`</span><span class="na">:green:</span>
+        <span class="gs">**n: [2,3]**</span>      2 + ⭡[3] ⭣5
+        <span class="nv">`──────────────────────────`</span><span class="na">:blue:</span>
+      <span class="gs">**n: [1,2,3]**</span>     1 + ⭡[2,3] ⭣6
+      <span class="nv">`──────────────────────────────`</span><span class="na">:pink:</span>
+    <span class="gs">**add([1,2,3])**</span>              ⭡[1,2,3]
+    ──────────────────────────────────
+</pre>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="code-blocks">
+            <h3>Code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">»</a></h3>
+            <p>Glide can show syntax-highlighted code in several hundred programming languages,
+              thanks to Sphinx’s use of <cite>Pygments</cite>, a code formatting system. To show code,
+              use a <cite>code-block</cite> directive, providing the language name, like so:</p>
+            <div class="compare docutils container">
+              <div class="literal-block-wrapper docutils container" id="id14">
+                <div class="code-block-caption"><span class="caption-text">source</span><a class="headerlink"
+                    href="#id14" title="Permalink to this code">»</a></div>
+                <div class="highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">js</span>
+
+    <span class="cm">/** Add together x and y */</span>
+
+    <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// this part is tricky</span>
+      <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+              <div class="literal-block-wrapper docutils container" id="id15">
+                <div class="code-block-caption"><span class="caption-text">result</span><a class="headerlink"
+                    href="#id15" title="Permalink to this code">»</a></div>
+                <div class="highlight-js notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="cm">/** Add together x and y */</span>
+
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// this part is tricky</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>Some supported languages and file formats that we use:</p>
+            <table class="hlist">
+              <tr>
+                <td>
+                  <ul class="simple">
+                    <li><cite>css</cite></li>
+                    <li><cite>docker</cite></li>
+                    <li><cite>html+jinja</cite></li>
+                    <li><cite>html</cite></li>
+                    <li><cite>http</cite></li>
+                    <li><cite>ini</cite></li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="simple">
+                    <li><cite>js</cite> <span class="small-muted">(JavaScript)</span></li>
+                    <li><cite>json</cite></li>
+                    <li><cite>jsx</cite></li>
+                    <li><cite>markdown</cite></li>
+                    <li><cite>postgresql</cite></li>
+                    <li><cite>python</cite></li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="simple">
+                    <li><cite>text</cite></li>
+                    <li><cite>toml</cite> <span class="small-muted">(markup language)</span></li>
+                    <li><cite>ts</cite> <span class="small-muted">(TypeScript)</span></li>
+                    <li><cite>yaml</cite></li>
+                    <li><cite>zsh</cite></li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <div class="small docutils container">
+              <p>Full list at <a class="reference external" href="https://pygments.org/docs/lexers/">Pygments Lexers</a>
+              </p>
+            </div>
+            <div class="admonition tip">
+              <p class="first admonition-title">Tip</p>
+              <p>Setting the default language</p>
+              <p>It’s common for a document to have lots of code blocks in the same language;
+                in this case, you can set the language once, at the top, and then you can
+                omit the language name:</p>
+              <div class="code-40c highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">highlight</span><span class="p">::</span> js
+
+{ lots of other content }
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span>
+
+    /<span class="ge">** Add together x and y *</span>/
+
+    function add(x, y) {
+      // this part is tricky
+      return x + y;
+    }
+</pre>
+                </div>
+              </div>
+              <p class="last">For blocks in other languages in that document, you can continue to specify
+                those languages directly.</p>
+            </div>
+            <div class="section" id="emphasizing-lines">
+              <h4>Emphasizing lines<a class="headerlink" href="#emphasizing-lines"
+                  title="Permalink to this headline">»</a></h4>
+              <p>To draw attention to particular lines, you can indicate this with
+                <cite>emphasized-lines</cite>; this can take one of more line numbers/ranges, joined with
+                commas:
+              </p>
+              <div class="compare docutils container">
+                <div class="literal-block-wrapper docutils container" id="id16">
+                  <div class="code-block-caption"><span class="caption-text">source</span><a class="headerlink"
+                      href="#id16" title="Permalink to this code">»</a></div>
+                  <div class="highlight-rst notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> js
+    <span class="nc">:emphasize-lines:</span> 1, 4-5
+
+    /<span class="ge">** Add together x and y *</span>/
+
+    function add(x, y) {
+      // this part is tricky
+      return x + y;
+    }
+</pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="literal-block-wrapper docutils container" id="id17">
+                  <div class="code-block-caption"><span class="caption-text">result</span><a class="headerlink"
+                      href="#id17" title="Permalink to this code">»</a></div>
+                  <div class="highlight-js notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="hll"><span class="cm">/** Add together x and y */</span>
+</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">  <span class="c1">// this part is tricky</span>
+</span><span class="hll">  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+</span><span class="p">}</span>
+</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="math notranslate nohighlight">
+                \[r = \frac{\sum^n_{i=1}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\Sigma^n_{i=1}(x_i - \bar{x})^2 \times
+                \Sigma^n_{i=1}(y_i - \bar{y})^2}}\]</div>
+              <p>Or <span class="math notranslate nohighlight">\(n = {x}^2\)</span> for inline.</p>
+            </div>
+            <div class="section" id="numbering-lines">
+              <h4>Numbering lines<a class="headerlink" href="#numbering-lines" title="Permalink to this headline">»</a>
+              </h4>
+              <p>For some examples, it can be useful to number the lines, like so:</p>
+              <div class="compare docutils container">
+                <div class="literal-block-wrapper docutils container" id="id18">
+                  <div class="code-block-caption"><span class="caption-text">source</span><a class="headerlink"
+                      href="#id18" title="Permalink to this code">»</a></div>
+                  <div class="highlight-rst notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> js
+    <span class="nc">:linenos:</span>
+
+    /<span class="ge">** Add together x and y *</span>/
+
+    function add(x, y) {
+      // this part is tricky
+      return x + y;
+    }
+</pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="literal-block-wrapper docutils container" id="id19">
+                  <div class="code-block-caption"><span class="caption-text">result</span><a class="headerlink"
+                      href="#id19" title="Permalink to this code">»</a></div>
+                  <div class="highlight-js notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="linenos">1</span><span class="cm">/** Add together x and y */</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos">4</span>  <span class="c1">// this part is tricky</span>
+<span class="linenos">5</span>  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p>You can combine emphasized lines and numbered lines freely.</p>
+            </div>
+            <div class="section" id="changing-font-size-or-number-of-columns">
+              <h4>Changing font size or number of columns<a class="headerlink"
+                  href="#changing-font-size-or-number-of-columns" title="Permalink to this headline">»</a></h4>
+              <p>Code blocks default to a smaller font, fitting 80 characters across (except
+                for side-by-side code, where it fits 40 across). In some cases, you may want to
+                override one or both of these.</p>
+              <p>You can change the font size with a class of <code
+                  class="samp docutils literal notranslate"><span class="pre">.code-</span><em><span class="pre">n</span></em></code>,
+                where <cite>n</cite> is a
+                number indicating the size (100 is the default, so 120 would be 120% of that
+                size). You can change the number of columns with a class of <code
+                  class="samp docutils literal notranslate"><span class="pre">.code-</span><em><span class="pre">n</span></em><span class="pre">c</span></code>,
+                where <cite>n</cite> is the number of columns.</p>
+              <div class="compare docutils container">
+                <div class="literal-block-wrapper docutils container" id="id20">
+                  <div class="code-block-caption"><span class="caption-text">source</span><a class="headerlink"
+                      href="#id20" title="Permalink to this code">»</a></div>
+                  <div class="highlight-rst notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> js
+    <span class="nc">:class:</span> .code-120 .code-30c
+
+    /<span class="ge">** Add together x, y *</span>/
+
+    function add(x, y) {
+      // this part is tricky
+      return x + y;
+    }
+</pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="literal-block-wrapper docutils container" id="id21">
+                  <div class="code-block-caption"><span class="caption-text">result</span><a class="headerlink"
+                      href="#id21" title="Permalink to this code">»</a></div>
+                  <div class="code-120 code-30c highlight-js notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="cm">/** Add together x, y */</span>
+
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// this part is tricky</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p>You can also use these classes with <cite>parsed-literal</cite> blocks; here is a more
+                attractive and smaller version of our recursion example:</p>
+              <div class="compare docutils container">
+                <div class="code-43c highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">parsed-literal</span><span class="p">::</span>
+   <span class="nc">:class:</span> code-90 code-35c
+
+           <span class="gs">**n: []**</span>  <span class="ge">*base*</span>    ⭣0
+           <span class="nv">`──────────────────`</span><span class="na">:red:</span>
+         <span class="gs">**n: [1]**</span>     3 + ⭡[] ⭣3
+         <span class="nv">`──────────────────────`</span><span class="na">:green:</span>
+       <span class="gs">**n: [2,3]**</span>      2 + ⭡[3] ⭣5
+       <span class="nv">`──────────────────────────`</span><span class="na">:blue:</span>
+     <span class="gs">**n: [1,2,3]**</span>     1 + ⭡[2,3] ⭣6
+     <span class="nv">`──────────────────────────────`</span><span class="na">:tan:</span>
+   <span class="gs">**add([1,2,3])**</span>              ⭡[1,2,3]
+   ──────────────────────────────────
+</pre>
+                  </div>
+                </div>
+                <div class="code-90 code-35c parsed-literal-wrapper">
+                  <pre>        <strong>n: []</strong>  <em>base</em>    ⭣0
+        <span class="red">──────────────────</span>
+      <strong>n: [1]</strong>     3 + ⭡[] ⭣3
+      <span class="green">──────────────────────</span>
+    <strong>n: [2,3]</strong>      2 + ⭡[3] ⭣5
+    <span class="blue">──────────────────────────</span>
+  <strong>n: [1,2,3]</strong>     1 + ⭡[2,3] ⭣6
+  <a href="#id3"><span class="problematic" id="id4">`──────────────────────────────`:tan:</span></a>
+<strong>add([1,2,3])</strong>              ⭡[1,2,3]
+──────────────────────────────────
+</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="console-sessions">
+            <h3>Console sessions<a class="headerlink" href="#console-sessions" title="Permalink to this headline">»</a>
+            </h3>
+            <p>To show examples of console work, we have a special class that can be applied
+              to <cite>parsed-literal</cite> or <cite>code-block</cite> elements: <code
+                class="docutils literal notranslate"><span class="pre">console</span></code>. It draws a thicker
+              and rounded border, to make it easy for the reader to understand
+              that this is an interaction with the console, and not merely a file or some
+              bit of example code.</p>
+            <p>For example, here is this class applied to a new code highlighting,
+              <cite>simple-console</cite>. This formatting automatically color syntax highlights
+              to differentiate between the shell prompt, the entered commands, the resulting
+              output, and any comments.
+            </p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> simple-console
+    <span class="nc">:class:</span> console
+
+    $ python -m venv venv
+    (venv) $ pip install -r reqs.txt
+    # Lots of output here ...
+    Installed foo==1.0 bar==2.0
+</pre>
+                </div>
+              </div>
+              <div class="console highlight-simple-console notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="gp">$ </span><span class="gs">python -m venv venv</span>
+<span class="gp">(venv) $ </span><span class="gs">pip install -r reqs.txt</span>
+<span class="c"># Lots of output here ...</span>
+Installed foo==1.0 bar==2.0
+</pre>
+                </div>
+              </div>
+            </div>
+            <div class="admonition tip">
+              <p class="first admonition-title">Tip</p>
+              <p>Shell highlighting is not 100% perfect</p>
+              <p>The algorithm for determining how to successfully highlight the session can be
+                fooled, particularly in trying to guess what is a comment. If the highlighting
+                isn’t correct, you can style your console session by hand using a
+                <cite>parsed-literal</cite> directive instead and using the CSS class names that
+                the code highlighter would have used.
+              </p>
+              <p>For example, the shell highlighter would have mistake the <code
+                  class="docutils literal notranslate"><span class="pre">#</span></code> in the
+                first line as starting a comment and gotten the formatting wrong. Instead,
+                here the correct output is forced, albeit tediously:</p>
+              <div class="compare last docutils container">
+                <div class="code-35c highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> simple-console
+    <span class="nc">:class:</span> console
+
+    <span class="nv">`$`</span><span class="na">:gp:</span> <span class="nv">`echo &quot;#Hi!&quot;`</span><span class="na">:gs:</span>
+    <span class="nv">`$`</span><span class="na">:gp:</span> <span class="nv">`# A comment`</span><span class="na">:c:</span>
+</pre>
+                  </div>
+                </div>
+                <div class="docutils container">
+                  <div class="console highlight code-35c parsed-literal-wrapper">
+                    <pre><span class="gp">$</span> <span class="gs">echo &quot;#Hi!&quot;</span>
+<span class="gp">$</span> <span class="c"># A comment</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section" id="other-console-interactions">
+              <h4>Other console interactions<a class="headerlink" href="#other-console-interactions"
+                  title="Permalink to this headline">»</a></h4>
+              <p>Of course, there are console programs besides the shell. You can also apply
+                the console class to other code languages, to show nicely syntax highlighted
+                interactions.</p>
+              <p>For example, here is an interaction with <cite>psql</cite>:</p>
+              <div class="console highlight-psql notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="n">psql</span> <span class="p">(</span><span class="mf">12.4</span><span class="p">)</span>
+<span class="k">Type</span> <span class="s s-Name">&quot;help&quot;</span> <span class="k">for</span> <span class="n">help</span><span class="mf">.</span>
+
+<span class="gp">joel=#</span> <span class="kp">\c</span> <span class="ss">jobly</span>
+<span class="n">You</span> <span class="n">are</span> <span class="n">now</span> <span class="n">connected</span> <span class="k">to</span> <span class="k">database</span> <span class="s s-Name">&quot;jobly&quot;</span> <span class="k">as</span> <span class="k">user</span> <span class="s s-Name">&quot;joel&quot;</span><span class="mf">.</span>
+<span class="gp">jobly=#</span> <span class="k">SELECT</span> <span class="n">first_name</span> <span class="k">FROM</span> <span class="n">users</span><span class="p">;</span>
+<span class="go">+------------+</span>
+<span class="go">| first_name |</span>
+<span class="go">+------------+</span>
+<span class="go">| Test       |</span>
+<span class="go">| Test       |</span>
+<span class="go">+------------+</span>
+<span class="go">(2 rows)</span>
+
+<span class="gp">jobly=#</span> <span class="c1">-- enter your next command here</span>
+</pre>
+                </div>
+              </div>
+              <p>Here are some useful code block “languages” to use for this:</p>
+              <ul class="simple">
+                <li><cite>pycon</cite>: Python console</li>
+                <li><cite>pytb</cite>: Python tracebacks</li>
+                <li><cite>psql</cite>: PostgreSQL prompt</li>
+                <li><cite>node</cite>: NodeJS <span class="green">(planned in the works!)</span></li>
+              </ul>
+              <p>If just want to show a plain console interaction, you can always use either
+                the code block language <cite>text</cite> or a <cite>parsed-literal</cite>.</p>
+            </div>
+          </div>
+          <div class="section" id="add-captions-to-code">
+            <h3>Add captions to code<a class="headerlink" href="#add-captions-to-code"
+                title="Permalink to this headline">»</a></h3>
+            <p>It is often helpful to indicate the file for some example code, or other provide
+              some context for it. You can add a caption to code like this:</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> python
+    <span class="nc">:caption:</span> example.py
+
+    if name == &quot;joel&quot;:
+        print &quot;hi&quot;
+</pre>
+                </div>
+              </div>
+              <div class="literal-block-wrapper docutils container" id="id22">
+                <div class="code-block-caption"><span class="caption-text">example.py</span><a class="headerlink"
+                    href="#id22" title="Permalink to this code">»</a></div>
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;joel&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;hi&quot;</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>It’s our style to use this for the filenames of demo files
+              or if some explanation is needed of where this code is coming from.</p>
+          </div>
+          <div class="section" id="including-code-in-files">
+            <h3>Including code in files<a class="headerlink" href="#including-code-in-files"
+                title="Permalink to this headline">»</a></h3>
+            <p>Whenever possible, don’t inline code—it’s too easy for it to have bugs!</p>
+            <p>Instead, keep the code in a separate file, so we can test it and include as
+              demo code.</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/include.py
+    <span class="nc">:language:</span> python
+</pre>
+                </div>
+              </div>
+              <div class="highlight-python notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A standard example.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">meow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Meow!&quot;&quot;&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;meow&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre>
+                </div>
+              </div>
+            </div>
+            <p>Now, since Glide knows the name of the code file, if you want to provide a
+              caption with the file path, you can provide an empty argument for caption, and
+              it will fill in the file path.</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/include.py
+    <span class="nc">:language:</span> python
+    <span class="nc">:caption:</span>
+</pre>
+                </div>
+              </div>
+              <div class="literal-block-wrapper docutils container" id="id23">
+                <div class="code-block-caption"><span class="caption-text">demo/include.py</span><a class="headerlink"
+                    href="#id23" title="Permalink to this code">»</a></div>
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A standard example.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">meow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Meow!&quot;&quot;&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;meow&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>Of course, to provide a specific caption for that code block, you can instead
+              provide whatever you’d like for the <cite>caption</cite> argument.</p>
+            <div class="section" id="finding-things">
+              <h4>Finding Things<a class="headerlink" href="#finding-things" title="Permalink to this headline">»</a>
+              </h4>
+              <p>Rather than having to break up our code files based on which parts we’d like to
+                show in our documents, you can indicate which lines to include by specifying
+                one or more lines/ranges:</p>
+              <div class="compare docutils container">
+                <div class="highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/include.py
+  <span class="nc">:language:</span> python
+  <span class="nc">:lines:</span> 1, 3-4
+</pre>
+                  </div>
+                </div>
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">meow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Meow!&quot;&quot;&quot;</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+              <p>For Python code, rather than using line numbers, you can provide the name of
+                a Python “object” (any function or class will do), and only that will be shown:</p>
+              <div class="compare docutils container">
+                <div class="highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/include.py
+  <span class="nc">:language:</span> python
+  <span class="nc">:pyobject:</span> Cat
+</pre>
+                  </div>
+                </div>
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A standard example.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">meow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Meow!&quot;&quot;&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;meow&quot;</span><span class="p">)</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+              <p>That is both easier and less prone to breakage when lines get added or removed
+                from files.</p>
+              <p>Unfortunately, that feature is limited to Python; however, you can also select
+                which parts of the code appear with <cite>start-at</cite> and <cite>end-at</cite>. For example,
+                imagine we want to show the <code
+                  class="code docutils literal notranslate"><span class="pre">if</span></code> block in this code:</p>
+              <div class="unsized highlight-js notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="linenos"> 1</span><span class="cm">/** Checking the game winner. */</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kd">function</span> <span class="nx">checkWinner</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos"> 4</span>  <span class="k">if</span> <span class="p">(</span><span class="nx">gameOver</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 5</span>    <span class="nx">$scoreMessage</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Yay!&quot;</span><span class="p">);</span>
+<span class="linenos"> 6</span>    <span class="nx">score</span> <span class="o">+=</span> <span class="mf">100</span><span class="p">;</span>
+<span class="linenos"> 7</span>  <span class="p">}</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1">// more code follows ...</span>
+</pre>
+                </div>
+              </div>
+              <p>We do so by matching any part of line 4 and the closing curly brace of line 7,
+                like so:</p>
+              <div class="compare docutils container">
+                <div class="highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/start-at.js
+  <span class="nc">:language:</span> js
+  <span class="nc">:start-at:</span> gameOver
+  <span class="nc">:end-at:</span> }
+</pre>
+                  </div>
+                </div>
+                <div class="highlight-js notranslate">
+                  <div class="highlight">
+                    <pre><span></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">gameOver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scoreMessage</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Yay!&quot;</span><span class="p">);</span>
+    <span class="nx">score</span> <span class="o">+=</span> <span class="mf">100</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+              <p>Those lines were indented in the original source but might look a bit odd here,
+                where the indendtation is out of context. You can add or subtract indentation
+                using <cite>indent</cite> or <cite>dedent</cite>:</p>
+              <div class="compare docutils container">
+                <div class="highlight-rst notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/start-at.js
+  <span class="nc">:language:</span> js
+  <span class="nc">:start-at:</span> gameOver
+  <span class="nc">:end-at:</span> }
+  <span class="nc">:dedent:</span> 2
+</pre>
+                  </div>
+                </div>
+                <div class="highlight-js notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">gameOver</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$scoreMessage</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Yay!&quot;</span><span class="p">);</span>
+  <span class="nx">score</span> <span class="o">+=</span> <span class="mf">100</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+              <p>That took more work that just using line numbers, but it’s generally better,
+                since the code-to-show selection is more likely to survive any refactoring of
+                the original code.</p>
+              <div class="admonition tip">
+                <p class="first admonition-title">Tip</p>
+                <p>Matching hard-to-match parts of the code</p>
+                <p>There are times when it’s tricky or impossible to match the code using
+                  <cite>start-at</cite> or <cite>end-at</cite>. Therefore, there are two other potential matchers,
+                  <cite>start-after</cite> and <cite>end-before</cite>. They can be useful if it’s easier to match
+                  the lines before or after the ones you want to show.
+                </p>
+                <p>That may not be enough for all cases: imagine we wanted to show just the
+                  function <cite>checkWinner()</cite> in our code (without cheating and using line
+                  numbers): we can’t match on a close curly brace because that will match the
+                  one on line 7, rather than the one on line 8.</p>
+                <p>A trick we often use is to insert marker comments for start-matching-after
+                  and stop-matching-before. In order to not drown out the code in markers,
+                  use something short and unobtrusive. Here’s a version of that file,
+                  marked up so it’s easier to match code from it:</p>
+                <div class="code-40c highlight-js notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="cm">/** Checking the game winner. */</span>
+
+<span class="c1">//&gt;</span>
+<span class="kd">function</span> <span class="nx">checkWinner</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">gameOver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scoreMessage</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Yay!&quot;</span><span class="p">);</span>
+    <span class="nx">score</span> <span class="o">+=</span> <span class="mf">100</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//&lt;</span>
+
+<span class="c1">// more code follows ...</span>
+</pre>
+                  </div>
+                </div>
+                <p>We can now find those matching symbols:</p>
+                <div class="compare last docutils container">
+                  <div class="code-45c highlight-rst notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> demo/start-after.js
+  <span class="nc">:language:</span> js
+  <span class="nc">:start-after:</span> //&gt;
+  <span class="nc">:end-before:</span> //&lt;
+</pre>
+                    </div>
+                  </div>
+                  <div class="highlight-js notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="kd">function</span> <span class="nx">checkWinner</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">gameOver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scoreMessage</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Yay!&quot;</span><span class="p">);</span>
+    <span class="nx">score</span> <span class="o">+=</span> <span class="mf">100</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="images">
+          <h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">»</a></h2>
+          <div class="section" id="id5">
+            <p>You can add an image with the <cite>image</cite> directive:</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> porcupine.jpg
+</pre>
+                </div>
+              </div>
+              <img alt="_images/porcupine.jpg" src="_images/porcupine.jpg" style="width: 10em;" />
+            </div>
+            <p>Glide will handle PNG, GIF, JPG, and SVG images.</p>
+            <p>It does not scale the images by default so it’s common to scale the image
+              by supplying either a height or width. This can be in any CSS-like format
+              (so things like <code class="docutils literal notranslate"><span class="pre">px</span></code> and <code
+                class="docutils literal notranslate"><span class="pre">%</span></code> would work), but it’s best to use
+              <code class="docutils literal notranslate"><span class="pre">em</span></code>.
+              It’s very common to want a small image in the handouts and a larger one
+              on the slides. Since the slides have a larger em size naturally, this is a
+              good unit.</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> porcupine.jpg
+  <span class="nc">:width:</span> 7em
+</pre>
+                </div>
+              </div>
+              <img alt="_images/porcupine.jpg" src="_images/porcupine.jpg" style="width: 7em;" />
+            </div>
+            <p>Images can be given a caption:</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> porcupine.jpg
+  <span class="nc">:width:</span> 7em
+
+  <span class="ge">*Hystrix cristata*</span> in native
+  environment.
+</pre>
+                </div>
+              </div>
+              <div class="figure align-default" id="id24">
+                <img alt="_images/porcupine.jpg" src="_images/porcupine.jpg" style="width: 7em;" />
+                <p class="caption"><span class="caption-text"><em>Hystrix cristata</em> in native environment.</span><a
+                    class="headerlink" href="#id24" title="Permalink to this image">»</a></p>
+              </div>
+            </div>
+            <p>For images without good definition, you can add a border:</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> porcupine.jpg
+  <span class="nc">:width:</span> 7em
+  <span class="nc">:class:</span> image-border
+</pre>
+                </div>
+              </div>
+              <img alt="_images/porcupine.jpg" class="image-border" src="_images/porcupine.jpg" style="width: 7em;" />
+            </div>
+            <p>For less-important images that should appear in slides and on-screen handouts,
+              but not when handouts are printed, use the <cite>noprint</cite> class:</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> porcupine.jpg
+  <span class="nc">:width:</span> 7em
+  <span class="nc">:class:</span> noprint
+</pre>
+                </div>
+              </div>
+              <div class="docutils container">
+                <p><span class="muted">(Nothing shown on printout)</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="notes-sidebars-and-topics">
+          <h2>Notes, sidebars, and topics<a class="headerlink" href="#notes-sidebars-and-topics"
+              title="Permalink to this headline">»</a></h2>
+          <div class="section" id="notes">
+            <h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">»</a></h3>
+            <p>Notes are for less-important information; we often use this to indicate that
+              something doesn’t need to be understood during a lecture. They do not appear
+              in slides.</p>
+            <div class="admonition note">
+              <p class="first admonition-title">Note</p>
+              <p>Class-based components</p>
+              <p class="last">Until 2020, it was common for components to be written with
+                classes, rather than functions.</p>
+            </div>
+          </div>
+          <div class="section" id="sidebars">
+            <h3>Sidebars<a class="headerlink" href="#sidebars" title="Permalink to this headline">»</a></h3>
+            <p>Sidebars are useful for an “aside” conversation related to the main piece
+              of content. Visually, they appear in a narrow column to the left of the main
+              content. These only appear in handouts.</p>
+            <p>An good use of these is sidebar-next-to-code:</p>
+            <div class="sidebar">
+              <p class="first sidebar-title">Lightly implemented</p>
+              <p>Note that that isn’t a very complete implementation: it should include
+                methods for things like finding the number of items in the <cite>ODict</cite>,
+                creating an <cite>ODict</cite> with an initial set of values, and so on.</p>
+              <p class="last">It does,
+                however, highlight the two important points: it’s easy to build this implementation,
+                and it suffers from O(n) when deleting items from the <cite>ODict</cite>.</p>
+            </div>
+            <div class="code-90 code-65c highlight-python notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="k">class</span> <span class="nc">OrderedDict</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Ordered dictionary, built from dictionary and list.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get a key. O(1).&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>  <span class="c1"># O(1)</span>
+
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set a key. O(1).&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span><span class="p">:</span>   <span class="c1"># O(1)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>  <span class="c1"># O(1)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>     <span class="c1"># O(1)</span>
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Remove a key. O(n).&quot;&quot;&quot;</span>
+
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>         <span class="c1"># O(1)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>      <span class="c1"># O(n)  &lt;-- :(</span>
+</pre>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="topics">
+            <h3>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">»</a></h3>
+            <p>Topics are for backstories or side-journeys. These tend to be longer than a
+              note or sidebar. For example:</p>
+            <div class="topic">
+              <p class="topic-title">The history of React</p>
+              <p>React was invented in 1962 by Walt Disney, decades before
+                JavaScript was invented.</p>
+              <p>{ much more here }</p>
+            </div>
+          </div>
+          <div class="section" id="hints">
+            <h3>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">»</a></h3>
+            <p>Provide hints using the admonition <cite>hint</cite>:</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">hint</span><span class="p">::</span> Picking the data structure
+
+    Use a dictionary!
+</pre>
+                </div>
+              </div>
+              <div class="admonition hint">
+                <p class="first admonition-title">Hint</p>
+                <p>Picking the data structure</p>
+                <p class="last">Use a dictionary!</p>
+              </div>
+            </div>
+            <p>Of course, there may be times when it would give away the game to show everyone
+              the hint immediately. You can add a <cite>hover-reveal</cite> class to any element that takes class
+              names to make the element initial obscured until the reader wants a hint.</p>
+            <div class="compare docutils container">
+              <div class="highlight-rst notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">..</span> <span class="ow">hint</span><span class="p">::</span> Picking the data structure
+
+  This is the hardest part; roll over
+  the box below if you&#39;d like a hint.
+
+<span class="p">  ..</span> <span class="ow">container</span><span class="p">::</span> hover-reveal
+
+    Use a dictionary!
+</pre>
+                </div>
+              </div>
+              <div class="admonition hint">
+                <p class="first admonition-title">Hint</p>
+                <p>Picking the data structure</p>
+                <p>This is the hardest part; roll over
+                  the box below if you’d like a hint.</p>
+                <div class="hover-reveal last docutils container">
+                  <p>Use a dictionary!</p>
+                </div>
+              </div>
+            </div>
+            <p>It wasn’t really a surprise: dictionaries are usually the answer.</p>
+          </div>
+        </div>
+        <div class="section" id="tables">
+          <h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">»</a></h2>
+          <div class="section" id="standard-table">
+            <h3>Standard Table<a class="headerlink" href="#standard-table" title="Permalink to this headline">»</a></h3>
+            <table border="1" class="docutils align-default">
+              <colgroup>
+                <col width="28%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="15%" />
+                <col width="15%" />
+              </colgroup>
+              <thead valign="bottom">
+                <tr class="row-odd">
+                  <th class="head">Data Structure</th>
+                  <th class="head">Get</th>
+                  <th class="head">Add</th>
+                  <th class="head">Delete</th>
+                  <th class="head">Iterate</th>
+                  <th class="head">Memory</th>
+                </tr>
+              </thead>
+              <tbody valign="top">
+                <tr class="row-even">
+                  <td>Tree</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Binary Search Tree</td>
+                  <td>O(log n)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+                <tr class="row-even">
+                  <td>Dictionary (Hash Map)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="orange">**</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Set (Hash Map)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="orange">**</span></td>
+                </tr>
+                <tr class="row-even">
+                  <td>OSet (HashMap+DLL)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">***</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>ODict (HashMap+DLL)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">***</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="section" id="arranging-columns">
+            <h3>Arranging Columns<a class="headerlink" href="#arranging-columns"
+                title="Permalink to this headline">»</a></h3>
+            <p>Can center columns other than first:</p>
+            <table border="1" class="td-center docutils align-default">
+              <colgroup>
+                <col width="28%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="15%" />
+                <col width="15%" />
+              </colgroup>
+              <thead valign="bottom">
+                <tr class="row-odd">
+                  <th class="head">Data Structure</th>
+                  <th class="head">Get</th>
+                  <th class="head">Add</th>
+                  <th class="head">Delete</th>
+                  <th class="head">Iterate</th>
+                  <th class="head">Memory</th>
+                </tr>
+              </thead>
+              <tbody valign="top">
+                <tr class="row-even">
+                  <td>Tree</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Binary Search Tree</td>
+                  <td>O(log n)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Can right justify columns other than first:</p>
+            <table border="1" class="td-right docutils align-default">
+              <colgroup>
+                <col width="28%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="15%" />
+                <col width="15%" />
+              </colgroup>
+              <thead valign="bottom">
+                <tr class="row-odd">
+                  <th class="head">Data Structure</th>
+                  <th class="head">Get</th>
+                  <th class="head">Add</th>
+                  <th class="head">Delete</th>
+                  <th class="head">Iterate</th>
+                  <th class="head">Memory</th>
+                </tr>
+              </thead>
+              <tbody valign="top">
+                <tr class="row-even">
+                  <td>Tree</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Binary Search Tree</td>
+                  <td>O(log n)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="section" id="right-columns">
+            <h3>Right Columns<a class="headerlink" href="#right-columns" title="Permalink to this headline">»</a></h3>
+            <p>Can right-justify columns other than first:</p>
+            <table border="1" class="td-right docutils align-default">
+              <colgroup>
+                <col width="28%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="14%" />
+                <col width="15%" />
+                <col width="15%" />
+              </colgroup>
+              <thead valign="bottom">
+                <tr class="row-odd">
+                  <th class="head">Data Structure</th>
+                  <th class="head">Get</th>
+                  <th class="head">Add</th>
+                  <th class="head">Delete</th>
+                  <th class="head">Iterate</th>
+                  <th class="head">Memory</th>
+                </tr>
+              </thead>
+              <tbody valign="top">
+                <tr class="row-even">
+                  <td>Tree</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Binary Search Tree</td>
+                  <td>O(log n)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="red">O(n)</span></td>
+                  <td>O(1)</td>
+                  <td><span class="green">*</span></td>
+                </tr>
+                <tr class="row-even">
+                  <td>Dictionary (Hash Map)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="orange">**</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Set (Hash Map)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">O(n)</span></td>
+                  <td><span class="orange">**</span></td>
+                </tr>
+                <tr class="row-even">
+                  <td>OSet (HashMap+DLL)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">***</span></td>
+                </tr>
+                <tr class="row-odd">
+                  <td>ODict (HashMap+DLL)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td>O(1)</td>
+                  <td><span class="red">***</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="section" id="csv-tables">
+            <h3>CSV Tables<a class="headerlink" href="#csv-tables" title="Permalink to this headline">»</a></h3>
+            <table border="1" class="red align-right docutils align-default" id="id25">
+              <caption><span class="caption-text">Whee</span><a class="headerlink" href="#id25"
+                  title="Permalink to this table">»</a></caption>
+              <colgroup>
+                <col width="50%" />
+                <col width="50%" />
+              </colgroup>
+              <thead valign="bottom">
+                <tr class="row-odd">
+                  <th class="head">Name</th>
+                  <th class="head">Age</th>
+                </tr>
+              </thead>
+              <tbody valign="top">
+                <tr class="row-even">
+                  <td>Ezra</td>
+                  <td>11</td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Auden</td>
+                  <td>12</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>It’s certainly aesthetically pleasing to look at reStructuredText source files and see
+              tables meticulously hand-drawn—but they are rather tedious to make. In many
+              cases, it will be easier to just describe your data as comma-separated values,
+              like so:</p>
+            <table border="1" class="red docutils align-default" id="id26">
+              <caption><span class="caption-text">Whee</span><a class="headerlink" href="#id26"
+                  title="Permalink to this table">»</a></caption>
+              <colgroup>
+                <col width="50%" />
+                <col width="50%" />
+              </colgroup>
+              <thead valign="bottom">
+                <tr class="row-odd">
+                  <th class="head">Name</th>
+                  <th class="head">Age</th>
+                </tr>
+              </thead>
+              <tbody valign="top">
+                <tr class="row-even">
+                  <td>Ezra</td>
+                  <td>11</td>
+                </tr>
+                <tr class="row-odd">
+                  <td>Auden</td>
+                  <td>12</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section" id="containers">
+          <h2>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">»</a></h2>
+          <div class="section" id="id6">
+            <p>The <cite>container</cite> directive just adds a div.</p>
+            <div class="docutils container">
+              <p>Boring!</p>
+            </div>
+            <p>This is useful if you want to put a class on it:</p>
+            <div class="someclass docutils container">
+              <p>Now I have <cite>someclass</cite> on my <cite>div</cite></p>
+            </div>
+            <p>Can put class on without a div with <cite>rst-class</cite>:</p>
+            <p class="someclass">This para has <cite>someclass</cite></p>
+            <p class="someclass">Each of these paras</p>
+            <p class="someclass">Has <cite>someclass</cite>, independently</p>
+          </div>
+        </div>
+        <div class="section" id="comparing-things">
+          <h2>Comparing Things<a class="headerlink" href="#comparing-things" title="Permalink to this headline">»</a>
+          </h2>
+          <div class="section" id="id7">
+            <p>Instead of just one thing:</p>
+            <div class="highlight-js notranslate">
+              <div class="highlight">
+                <pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">&quot;joel&quot;</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">);</span>
+</pre>
+              </div>
+            </div>
+            <p>Side-by-side comparisons are useful:</p>
+            <div class="compare docutils container">
+              <div class="docutils container">
+                <div class="highlight-js notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">&quot;joel&quot;</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">);</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+              <div class="docutils container">
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;joel&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;hi&quot;</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="compare docutils container">
+              <div class="docutils container">
+                <p>The spacing should look right even if we lead with compare, or
+                  if the compares are textual.</p>
+              </div>
+              <div class="docutils container">
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;joel&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;hi&quot;</span>
+</pre>
+                  </div>
+                </div>
+                <div class="highlight-python notranslate">
+                  <div class="highlight">
+                    <pre><span></span><span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;joel2&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;hi&quot;</span>
+</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="only">
+          <h2>Only<a class="headerlink" href="#only" title="Permalink to this headline">»</a></h2>
+          <div class="section" id="id8">
+            <p>To have things only appear on slides:</p>
+            <p>To have things not appear on slides, but everywhere else:</p>
+            <p>This does not appear on slides.</p>
+            <p>Don’t ever say “only:: handouts”—since we have other possible
+              non-slide formats (LaTeX, epub, etc). Always say “only:: not revealjs”.</p>
+          </div>
+        </div>
+        <div class="section" id="slides">
+          <h2>Slides<a class="headerlink" href="#slides" title="Permalink to this headline">»</a></h2>
+          <p>describe br</p>
+          <div class="section" id="speaker-notes">
+            <h3>Speaker Notes<a class="headerlink" href="#speaker-notes" title="Permalink to this headline">»</a></h3>
+            <p>You can add speaker notes with the <cite>speaker</cite> directive. These appear in “speaker notes” view
+              (press <strong>S</strong> in revealjs). This never appears on handouts.</p>
+          </div>
+        </div>
+        <div class="section" id="commonly-overlooked">
+          <h2>Commonly overlooked<a class="headerlink" href="#commonly-overlooked"
+              title="Permalink to this headline">»</a></h2>
+        </div>
+        <div class="section" id="glossary">
+          <h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">»</a></h2>
+          <dl class="glossary docutils">
+            <dt id="term-LaTeX">LaTeX<a class="headerlink" href="#term-LaTeX" title="Permalink to this term">»</a></dt>
+            <dd>LaTeX is a powerful typesetting system that is used by Glide to generate
+              our PDFs (LaTeX itself can be used to create many other kinds of documents;
+              this is just what we use from it).</dd>
+            <dt id="term-Prince">Prince<a class="headerlink" href="#term-Prince" title="Permalink to this term">»</a>
+            </dt>
+            <dd>A commercial HTML to PDF converter.</dd>
+          </dl>
+        </div>
+      </div>
+
+
+
+      <footer class="page-footer">
+        &#169; Copyright 2020, Joel Burton.
+        Last updated on Nov 15, 2021.
+      </footer>
+    </div>
+  </div>
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+  <script src="_static/twemoji.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="http://unpkg.com/jquery"></script>
+  <script src="insertForm.js"></script>
+
+</body>
+
+</html>
