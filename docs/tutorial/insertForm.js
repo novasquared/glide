@@ -16,56 +16,77 @@ const formHTML = `
     <h2>Exercise Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">»</a></h2>
         <form id="feedback-form">
         <p>
-        <fieldset id="overall-rating">
-            <span>Overall Rating: </span>
-            <span class="star-cb-group">
-                <input type="radio" id="rating-5" name="rating" value="5" />
-                <label for="rating-5">5</label>
-                <input type="radio" id="rating-4" name="rating" value="4" />
-                <label for="rating-4">4</label>
-                <input type="radio" id="rating-3" name="rating" value="3" />
-                <label for="rating-3">3</label>
-                <input type="radio" id="rating-2" name="rating" value="2" />
-                <label for="rating-2">2</label>
-                <input type="radio" id="rating-1" name="rating" value="1" />
-                <label for="rating-1">1</label>
-                <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
-                <label for="rating-0">0</label>
-            </span>
-        </fieldset>
-
+            <fieldset id="overall-rating" class="row">
+                <span class="col-3">Overall Rating: </span>
+                <span class="star-cb-group col-3">
+                    <input type="radio" id="rating-5" name="rating" value="5" />
+                    <label for="rating-5">5</label>
+                    <input type="radio" id="rating-4" name="rating" value="4" />
+                    <label for="rating-4">4</label>
+                    <input type="radio" id="rating-3" name="rating" value="3" />
+                    <label for="rating-3">3</label>
+                    <input type="radio" id="rating-2" name="rating" value="2" />
+                    <label for="rating-2">2</label>
+                    <input type="radio" id="rating-1" name="rating" value="1" />
+                    <label for="rating-1">1</label>
+                    <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+                    <label for="rating-0">0</label>
+                </span>
+            </fieldset>
         </p>
+<!--        <p>
+            <fieldset id="instructions-rating" class="row">
+                <span class="col-3">Instruction Rating: </span>
+                <span class="star-cb-group col-3">
+                    <input type="radio" id="rating-5" name="rating" value="5" />
+                    <label for="rating-5">5</label>
+                    <input type="radio" id="rating-4" name="rating" value="4" />
+                    <label for="rating-4">4</label>
+                    <input type="radio" id="rating-3" name="rating" value="3" />
+                    <label for="rating-3">3</label>
+                    <input type="radio" id="rating-2" name="rating" value="2" />
+                    <label for="rating-2">2</label>
+                    <input type="radio" id="rating-1" name="rating" value="1" />
+                    <label for="rating-1">1</label>
+                    <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+                    <label for="rating-0">0</label>
+                </span>
+            </fieldset>
+        </p> -->
+
+        <!--Original Code-->
+        <!--</p>
             <label for="instructions-rating">Instruction Rating: </label>
             <input type="number" id="instructions-rating" class="ratings" name="instructions-rating" min="1"
                 max="5"></input>
         <p>
-        </p>
+        </p> -->
             <!--<p>
                 <span>Overall Rating: </span>
                 <span class="overall-rating-stars">
-                    <input type="radio" class="star" name="rating" value="5"><span class="star"></span>
+                    <input type="radio" class="star" name="overall-rating" value="5"><span class="star"></span>
                 
-                    <input type="radio" class="star" name="rating" value="4"><span class="star"></span>
+                    <input type="radio" class="star" name="overall-rating" value="4"><span class="star"></span>
                 
-                    <input type="radio" class="star" name="rating" value="3"><span class="star"></span>
+                    <input type="radio" class="star" name="overall-rating" value="3"><span class="star"></span>
                 
-                    <input type="radio" class="star" name="rating" value="2"><span class="star"></span>
+                    <input type="radio" class="star" name="overall-rating" value="2"><span class="star"></span>
                 
-                    <input type="radio" class="star" name="rating" value="1"><span class="star"></span>
+                    <input type="radio" class="star" name="overall-rating" value="1"><span class="star"></span>
                 </span>
             </p>
            <p>
             <span>Instructions Rating: </span>
             <span class="instructions-rating-stars">
-                <input type="radio" class="star" name="rating" value="5"><span class="star"></span>
+                <input type="radio" class="star" name="instructions-rating" value="5"><span class="star"></span>
             
-                <input type="radio" class="star" name="rating" value="4"><span class="star"></span>
+                <input type="radio" class="star" name="instructions-rating" value="4"><span class="star"></span>
             
-                <input type="radio" class="star" name="rating" value="3"><span class="star"></span>
+                <input type="radio" class="star" name="instructions-rating" value="3"><span class="star"></span>
             
-                <input type="radio" class="star" name="rating" value="2"><span class="star"></span>
+                <input type="radio" class="star" name="instructions-rating" value="2"><span class="star"></span>
             
-                <input type="radio" class="star" name="rating" value="1"><span class="star"></span>
+                <input type="radio" class="star" name="instructions-rating" value="1"><span class="star"></span>
             </span>
             </p> -->
             <p>
@@ -91,16 +112,16 @@ const formHTML = `
 $(formNavLink).insertAfter($formNavLinkSection);
 $(formHTML).insertAfter($formSection);
 
-function getStarRating(className) {
-    var starContainer = document.getElementsByClassName(className);
+// function getStarRating(className) {
+//     var starContainer = document.getElementsByClassName(className);
   
-    for(i = 0; i < starContainer.children.length; i++) {
+//     for(i = 0; i < starContainer.children.length; i++) {
         
-        if(starContainer.children[i].checked) {
-            return starContainer.children[i].value
-        }
-    }
-}
+//         if(starContainer.children[i].checked) {
+//             return starContainer.children[i].value
+//         }
+//     }
+// }
 
 const $formId = $("#feedback-form")
 const $overallRating = $("#overall-rating");
