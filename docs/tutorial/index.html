@@ -16,11 +16,54 @@
   <link
     href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,600,300italic,400italic,600italic|Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro:400,600,400italic,600italic'
     rel='stylesheet'>
+    
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <style>
+<style>
+    
+.rating-star {
+    direction: rtl;
+    font-size: 40px;
+    unicode-bidi: bidi-override;
+    display: inline-block;
+}
+.rating-star input {
+    opacity: 0;
+    position: relative;
+    left: -30px;
+    z-index: 2;
+    cursor: pointer;
+}
+.rating-star span.star:before {
+    color: #777777;
+}
+.rating-star span.star {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    z-index: 1;
+}
+.rating-star span {
+    margin-left: -30px;
+}
+.rating-star span.star:before {
+    color: #777777;
+    content:"\f006";
+}
+.rating-star input:hover + span.star:before, .rating-star input:hover + span.star ~ span.star:before, .rating-star input:checked + span.star:before, .rating-star input:checked + span.star ~ span.star:before {
+    color: #ffd100;
+    content:"\f005";
+}
+ 
+.selected-rating{
+    color: #ffd100;
+    font-weight: bold;
+    font-size: 42px;
+}
+</style>
 
-
-  </style>
   <style>
     :root {
       --theme-bodyfont: "Source Serif Pro", serif;
@@ -2129,6 +2172,7 @@ Installed foo==1.0 bar==2.0
   <script src="http://unpkg.com/jquery"></script>
   <script src="http://unpkg.com/axios/dist/axios.js"></script>
   <script src="insertForm.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 
 </body>
 

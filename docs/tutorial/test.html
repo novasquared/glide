@@ -1,46 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    </head>
+</head>
+<style>
+    .star-cb-group {
+        /* remove inline-block whitespace */
+        font-size: 0;
+        /* flip the order so we can use the + and ~ combinators */
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        /* the hidden clearer */
+    }
 
-    <body>
-        <h2>Exercise Feedback Form</h2>
-            <form id="feedback-form">
-                <p>
-                    <label for="overall-rating">Overall Rating: </label>
-                    <input value="1" type="number" id="overall-rating" class="ratings" name="overall-rating" min="1" max="5"></input>
-                </p>
-                <p>
-                    <label for="instructions-rating">Instruction Rating: </label>
-                    <input value="1" type="number" id="instructions-rating" class="ratings" name="instructions-rating" min="1"
-                        max="5"></input>
-                </p>
-                <p>
-                    <label for="finished-or-reached-further-study">Finished or reached further study? </label>
-                    <input value="True" type="checkbox" id="finished-or-reached-further-study"
-                        name="finished-or-reached-further-study"></input>
-                </p>
-                <p>
-                    <label for="has_bugs">Were there any bugs in this exercise? </label>
-                    <input value="True" type="checkbox" id="has-bugs" name="has-bugs"></input>
-                </p>
-                <p>
-                    <label style="display:block" for="comments">Comments:</label>
-                    <textarea value="test" style="display:block" id="comments" name="comments" placeholder="Enter your comments here"
-                        rows="4" cols="50"></textarea>
-                </p>
-                <p>
-                    <input type="submit" value="Submit Feedback"></input>
-                </p>
-            </form>
-        </div>
-        <script src="http://unpkg.com/jquery"></script>
-        <script src="http://unpkg.com/axios/dist/axios.js"></script>
-        <script src="insertForm.js"></script>
-        </body>
+    .star-cb-group * {
+        font-size: 1rem;
+    }
+
+    .star-cb-group>input {
+        display: none;
+    }
+
+    .star-cb-group>input+label {
+        /* only enough room for the star */
+        display: inline-block;
+        overflow: hidden;
+        text-indent: 9999px;
+        width: 1em;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .star-cb-group>input+label:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: "☆";
+        color: #888;
+    }
+
+    .star-cb-group>input:checked~label:before,
+    .star-cb-group>input+label:hover~label:before,
+    .star-cb-group>input+label:hover:before {
+        content: "★";
+        color: #e52;
+        text-shadow: 0 0 1px #333;
+    }
+
+    .star-cb-group>.star-cb-clear+label {
+        text-indent: -9999px;
+        width: .5em;
+        margin-left: -.5em;
+    }
+
+    .star-cb-group>.star-cb-clear+label:before {
+        width: .5em;
+    }
+
+    .star-cb-group:hover>input+label:before {
+        content: "☆";
+        color: #888;
+        text-shadow: none;
+    }
+
+    .star-cb-group:hover>input+label:hover~label:before,
+    .star-cb-group:hover>input+label:hover:before {
+        content: "★";
+        color: #e52;
+        text-shadow: 0 0 1px #333;
+    }
+</style>
+
+<body>
+    <h2>Exercise Feedback Form</h2>
+    <form id="feedback-form">
+        <p>
+            <!-- <label for="overall-rating">Overall Rating: </label>
+                <input type="number" id="overall-rating" class="ratings" name="overall-rating" min="1" max="5"></input> -->
+            <fieldset>
+                <span>Overall Rating: </span>
+                <span class="star-cb-group">
+                    <input type="radio" id="rating-5" name="rating" value="5" />
+                    <label for="rating-5">5</label>
+                    <input type="radio" id="rating-4" name="rating" value="4" checked="checked" />
+                    <label for="rating-4">4</label>
+                    <input type="radio" id="rating-3" name="rating" value="3" />
+                    <label for="rating-3">3</label>
+                    <input type="radio" id="rating-2" name="rating" value="2" />
+                    <label for="rating-2">2</label>
+                    <input type="radio" id="rating-1" name="rating" value="1" />
+                    <label for="rating-1">1</label>
+                    <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+                    <label for="rating-0">0</label>
+                </span>
+            </fieldset>
+        </p>
+        <p>
+            <label for="instructions-rating">Instruction Rating: </label>
+            <input type="number" id="instructions-rating" class="ratings" name="instructions-rating" min="1"
+                max="5"></input>
+        </p>
+        <p>
+            <label for="finished-or-reached-further-study">Finished or reached further study? </label>
+            <input type="checkbox" id="finished-or-reached-further-study"
+                name="finished-or-reached-further-study"></input>
+        </p>
+        <p>
+            <label for="has_bugs">Were there any bugs in this exercise? </label>
+            <input type="checkbox" id="has-bugs" name="has-bugs"></input>
+        </p>
+        <p>
+            <label style="display:block" for="comments">Comments:</label>
+            <textarea style="display:block" id="comments" name="comments" placeholder="Enter your comments here"
+                rows="4" cols="50"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Submit Feedback"></input>
+        </p>
+    </form>
+    </div>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="http://unpkg.com/axios/dist/axios.js"></script>
+    <script src="insertForm.js"></script>
+</body>
+
 </html>
