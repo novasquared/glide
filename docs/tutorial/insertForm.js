@@ -15,7 +15,32 @@ const formHTML = `
     <div class="section" id="feedback">
     <h2>Exercise Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">»</a></h2>
         <form id="feedback-form">
-            <p>
+        <p>
+        <fieldset id="overall-rating">
+            <span>Overall Rating: </span>
+            <span class="star-cb-group">
+                <input type="radio" id="rating-5" name="rating" value="5" />
+                <label for="rating-5">5</label>
+                <input type="radio" id="rating-4" name="rating" value="4" />
+                <label for="rating-4">4</label>
+                <input type="radio" id="rating-3" name="rating" value="3" />
+                <label for="rating-3">3</label>
+                <input type="radio" id="rating-2" name="rating" value="2" />
+                <label for="rating-2">2</label>
+                <input type="radio" id="rating-1" name="rating" value="1" />
+                <label for="rating-1">1</label>
+                <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+                <label for="rating-0">0</label>
+            </span>
+        </fieldset>
+
+        </p>
+            <label for="instructions-rating">Instruction Rating: </label>
+            <input type="number" id="instructions-rating" class="ratings" name="instructions-rating" min="1"
+                max="5"></input>
+        <p>
+        </p>
+            <!--<p>
                 <span>Overall Rating: </span>
                 <span class="overall-rating-stars">
                     <input type="radio" class="star" name="rating" value="5"><span class="star"></span>
@@ -29,7 +54,7 @@ const formHTML = `
                     <input type="radio" class="star" name="rating" value="1"><span class="star"></span>
                 </span>
             </p>
-            <p>
+           <p>
             <span>Instructions Rating: </span>
             <span class="instructions-rating-stars">
                 <input type="radio" class="star" name="rating" value="5"><span class="star"></span>
@@ -42,7 +67,7 @@ const formHTML = `
             
                 <input type="radio" class="star" name="rating" value="1"><span class="star"></span>
             </span>
-            </p>
+            </p> -->
             <p>
                 <label for="finished-or-reached-further-study">Finished or reached further study? </label>
                 <input type="checkbox" id="finished-or-reached-further-study"
@@ -78,8 +103,8 @@ function getStarRating(className) {
 }
 
 const $formId = $("#feedback-form")
-// const $overallRating = $("#overall-rating");
-// const $instructionsRating = $("#instructions-rating");
+const $overallRating = $("#overall-rating");
+const $instructionsRating = $("#instructions-rating");
 const $finishedOrReachedFurtherStudy = $("#finished-or-reached-further-study");
 const $hasBugs = $("#has-bugs");
 const $comments = $("#comments");
@@ -91,10 +116,11 @@ async function handleSubmit(evt) {
     const exerciseURL = window.location.pathname;
     // const exerciseId = exerciseURL.split('/')[3];
     const exerciseId = "test-exercise-1";
-    // const overallRating = $overallRating.val();
-    const overallRating = getStarRating("overall-rating-stars")
+    const overallRating = $overallRating.val();
+    // const overallRating = getStarRating("overall-rating-stars")
     console.log(overallRating);
-    const instructionsRating = getStarRating("instructions-rating-stars");
+    const instructionsRating = $instructionsRating.val();
+    // const instructionsRating = getStarRating("instructions-rating-stars");
     const finishedOrReachedFurtherStudy = $finishedOrReachedFurtherStudy.val();
     const hasBugs = $hasBugs.val();
     const comments = $comments.val();
