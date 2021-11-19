@@ -16,86 +16,9 @@
   <link
     href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,600,300italic,400italic,600italic|Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro:400,600,400italic,600italic'
     rel='stylesheet'>
-    
- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
- <!-- <link rel="stylesheet" -->
-  <!-- href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"> -->
 
-
-<style>
-.star-cb-group {
-        /* remove inline-block whitespace */
-        font-size: 0;
-        /* flip the order so we can use the + and ~ combinators */
-        unicode-bidi: bidi-override;
-        direction: rtl;
-        /* the hidden clearer */
-    }
-
-    .star-cb-group * {
-        font-size: 1rem;
-    }
-
-    .star-cb-group>input {
-        display: none;
-    }
-
-    .star-cb-group>input+label {
-        /* only enough room for the star */
-        display: inline-block;
-        overflow: hidden;
-        text-indent: 9999px;
-        width: 1em;
-        white-space: nowrap;
-        cursor: pointer;
-    }
-
-    .star-cb-group>input+label:before {
-        display: inline-block;
-        text-indent: -9999px;
-        content: "☆";
-        color: #888;
-    }
-
-    .star-cb-group>input:checked~label:before,
-    .star-cb-group>input+label:hover~label:before,
-    .star-cb-group>input+label:hover:before {
-        content: "★";
-        color: #e52;
-        text-shadow: 0 0 1px #333;
-    }
-
-    .star-cb-group>.star-cb-clear+label {
-        text-indent: -9999px;
-        width: .5em;
-        margin-left: -.5em;
-    }
-
-    .star-cb-group>.star-cb-clear+label:before {
-        width: .5em;
-    }
-
-    .star-cb-group:hover>input+label:before {
-        content: "☆";
-        color: #888;
-        text-shadow: none;
-    }
-
-    .star-cb-group:hover>input+label:hover~label:before,
-    .star-cb-group:hover>input+label:hover:before {
-        content: "★";
-        color: #e52;
-        text-shadow: 0 0 1px #333;
-    }
-
-    fieldset{
-      border: none;
-    margin-left: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-    }
-
-</style>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
 
   <style>
     :root {
@@ -2207,7 +2130,7 @@ Installed foo==1.0 bar==2.0
   <script src="http://unpkg.com/jquery"></script>
   <script src="http://unpkg.com/axios/dist/axios.js"></script>
   <script src="insertForm.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
 
